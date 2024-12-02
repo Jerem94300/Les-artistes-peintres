@@ -1,0 +1,401 @@
+@import url(/reset.css);
+
+@font-face {
+  font-family: "inspirationregular";
+  src: url("/fonts/inspiration-regular-webfont.woff2") format("woff2"),
+    url("/fonts/inspiration-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0 auto;
+  background-color: rgb(58, 13, 13) !important;
+}
+
+.container {
+  width: 500px;
+
+  margin-bottom: 6rem;
+}
+
+.logo__header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title__h1 {
+  font-family: "inspirationregular";
+  color: whitesmoke;
+}
+
+.menu__burger {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border-radius: 0.5rem;
+  background-color: rgba(165, 42, 42, 0.151) !important;
+}
+
+.nav__link {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-decoration: none;
+  width: 100px;
+  color: white;
+  padding: 0.3rem;
+  border-left: 0.5px solid rgba(255, 255, 0, 0.116);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav__link:hover {
+  color: orangered;
+  background-color: rgba(165, 42, 42, 0.5);
+}
+
+.li__content {
+  margin-left: 1rem;
+}
+
+.first__li {
+  border: none;
+  margin-left: -2rem;
+}
+
+.img__main {
+  width: 150px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.main {
+  background-color: rgb(122, 196, 171);
+}
+
+.header__main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2em;
+}
+
+.header__main__text {
+  color: white;
+}
+
+.main__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paragraph__main {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.title__h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+}
+.secnd__navList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.nav__link2 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.nav__link2:hover {
+  color: orangered;
+}
+
+.border__li {
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.animation {
+  animation: 0.6s linear forwards movin;
+}
+
+.img__galerie {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+}
+
+.title__galerie {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgba(128, 128, 128, 0.705);
+  font-weight: bold;
+}
+
+.galerie__block {
+  background-color: rgb(230, 202, 167);
+  width: 80%;
+  padding-top: 1rem;
+  padding-left: 2rem;
+}
+
+.galerie__picture {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  padding-right: 2rem;
+  margin-bottom: 4rem;
+}
+
+.pict__galerie {
+  position: relative;
+}
+
+.legend__picture {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+
+.livebox__block {
+  min-width: 100%;
+  min-height: 120vh;
+  background-color: rgba(128, 128, 128, 0.938);
+  display: none;
+  position: absolute;
+  justify-content: space-between;
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+  z-index: +1;
+}
+
+.chevronLeft,
+.chevronRight {
+  margin: 0 3rem;
+  z-index: 1000 !important;
+  cursor: pointer;
+  background-color: antiquewhite;
+  width: 50px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+
+.imgLivebox{
+  width: 150px;
+  height: 150px;
+  scale: 2.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cross {
+  position: absolute;
+  display: flex;
+  padding: 2rem;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 48px;
+
+}
+
+@keyframes movin {
+  0% {
+    transform: translateY(-500px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(-300px);
+  }
+
+  80% {
+    transform: translateY(0);
+  }
+
+  90% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title__h1 {
+    font-size: 64px;
+  }
+
+  .nav__list {
+    display: none;
+    min-height: 250px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .nav__link {
+    text-decoration: none;
+    width: 100px;
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nav__link:hover {
+    width: 100%;
+    color: orangered;
+    background-color: rgba(165, 42, 42, 0.5);
+  }
+
+  .li__content {
+    margin-left: 0;
+  }
+
+  .first__li {
+    margin-left: 0;
+  }
+
+  .img__main {
+    display: none;
+  }
+
+  .title__h2 {
+    margin-top: 1rem;
+  }
+
+  .main__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .galerie__block {
+    width: 100%;
+  }
+
+  .galerie__picture {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title__galerie {
+    text-align: center;
+  }
+
+  .border__li {
+    width: 93%;
+  }
+
+  .menu__burger {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .burger__picture {
+    width: 80px;
+  }
+
+  .burger__picture:hover {
+    cursor: pointer;
+    opacity: 50%;
+  }
+
+  .hidden {
+    display: flex;
+  }
+
+  .livebox__block {
+    min-height: 700px !important;
+    margin-top: 60rem;
+    min-width: none;
+    top: 0;
+
+  }
+
+
+
+.img__galerie {
+  min-height: auto;
+
+}
+
+.chevronLeft,
+.chevronRight {
+  justify-content: space-between;
+ bottom: 0;
+}
+
+  
+
+
+
+
+
+  @keyframes movin {
+    0% {
+      transform: translateY(-150px);
+    }
+
+    50% {
+      transform: translateY(0);
+    }
+
+    60% {
+      transform: translateY(-100px);
+    }
+
+    80% {
+      transform: translateY(0);
+    }
+
+    90% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
