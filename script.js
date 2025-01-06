@@ -199,36 +199,42 @@ function afficherGalerie(artiste) {
     const imgLivebox = document.querySelector(".imgLivebox");
     const cross = document.querySelector(".cross");
 
-    image.addEventListener("click", function (event) {
-      event.preventDefault();
-      liveBox.style.display = "flex";
-      imgLivebox.innerHTML = figure.innerHTML;
-    });
+    let currentIndex = 0; // Index de l'image courante
+
+image.addEventListener("click", function () {
+  liveBox.style.display = "flex";
+  imgLivebox.innerHTML = figure.innerHTML;
+  currentIndex = artiste.peintures.indexOf(peinture); // Définir l'index courant
+});
+
+
 
     cross.addEventListener("click", function (event) {
       event.preventDefault();
       liveBox.style.display = "none";
     });
 
-    chevronLeft.addEventListener("click", function (event) {
-      event.preventDefault();
+   // Flèche gauche
+chevronLeft.addEventListener("click", function (event) {
+  event.preventDefault();
+  currentIndex = (currentIndex - 1 + artiste.peintures.length) % artiste.peintures.length; // Décrément circulaire
+  const peinturePrecedente = artiste.peintures[currentIndex];
+  imgLivebox.innerHTML = `
+    <img src="${peinturePrecedente.image}" alt="${peinturePrecedente.nom}" class="img__galerie">
+    <figcaption class="legend__picture">${peinturePrecedente.nom}</figcaption>`;
+});
 
-      artiste.peintures.forEach((peinture) => {
-        imgLivebox.innerHTML = figure.innerHTML;
 
-        console.log(figure.innerHTML);
-      });
-    });
+  // Flèche droite
+chevronRight.addEventListener("click", function (event) {
+  event.preventDefault();
+  currentIndex = (currentIndex + 1) % artiste.peintures.length; // Incrément circulaire
+  const peintureSuivante = artiste.peintures[currentIndex];
+  imgLivebox.innerHTML = `
+    <img src="${peintureSuivante.image}" alt="${peintureSuivante.nom}" class="img__galerie">
+    <figcaption class="legend__picture">${peintureSuivante.nom}</figcaption>`;
+});
 
-    chevronRight.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      artiste.peintures.forEach((peinture) => {
-        imgLivebox.innerHTML = figure.innerHTML;
-
-        console.log(figure.innerHTML);
-      });
-    });
 
     // animations
 
